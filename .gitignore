@@ -23,5 +23,3 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# Documentos personales
-src/assets/cv-lucas-monroy.pdf
