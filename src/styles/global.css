@@ -1,0 +1,133 @@
+:root {
+	/* Colores tema claro */
+	--bg-primary: #ffffff;
+	--bg-secondary: #f8f9fa;
+	--bg-tertiary: #f1f5f9;
+	--text-primary: #1a202c;
+	--text-secondary: #718096;
+	--text-muted: #a0aec0;
+	--border-color: #e2e8f0;
+	--accent-color: #3182ce;
+	--accent-hover: #2c5aa0;
+	--button-bg: #000000;
+	--button-text: #ffffff;
+	--nav-bg: rgba(255, 255, 255, 0.8);
+	--shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+	/* Colores tema oscuro */
+	--bg-primary: #1a202c;
+	--bg-secondary: #2d3748;
+	--bg-tertiary: #374151;
+	--text-primary: #f7fafc;
+	--text-secondary: #e2e8f0;
+	--text-muted: #a0aec0;
+	--border-color: #4a5568;
+	--accent-color: #63b3ed;
+	--accent-hover: #4299e1;
+	--button-bg: #ffffff;
+	--button-text: #1a202c;
+	--nav-bg: rgba(26, 32, 44, 0.8);
+	--shadow: rgba(0, 0, 0, 0.3);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Inter', system-ui, sans-serif;
+	scroll-behavior: smooth;
+}
+
+body {
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
+	line-height: 1.6;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	min-height: 100vh;
+}
+
+/* Utilidades */
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.75rem 1.5rem;
+	border-radius: 0.5rem;
+	text-decoration: none;
+	font-weight: 500;
+	transition: all 0.2s ease;
+	border: none;
+	cursor: pointer;
+	font-size: 0.9rem;
+}
+
+.btn-primary {
+	background-color: var(--button-bg);
+	color: var(--button-text);
+}
+
+.btn-primary:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px var(--shadow);
+}
+
+.btn-outline {
+	background-color: transparent;
+	color: var(--text-primary);
+	border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+	background-color: var(--bg-secondary);
+}
+
+/* Iconos */
+.icon {
+	width: 1.25rem;
+	height: 1.25rem;
+	fill: currentColor;
+}
+
+.icon-sm {
+	width: 1rem;
+	height: 1rem;
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fadeInUp {
+	animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+	.container {
+		padding: 0 1rem;
+	}
+	
+	.btn {
+		padding: 0.65rem 1.25rem;
+		font-size: 0.85rem;
+	}
+}

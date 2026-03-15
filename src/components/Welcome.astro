@@ -1,0 +1,393 @@
+---
+// Componente principal del portafolio
+import { Image } from 'astro:assets';
+import '../styles/global.css';
+import '../styles/portfolio.css';
+
+	
+import colmenaImg from '../assets/images/colmena-sabaneta.png';
+import neuralImg from '../assets/images/neural-network.png';
+import sivigilaImg from '../assets/images/sivigila-analysis.png';
+import cv from '../assets/cv-lucas-monroy.pdf';
+
+
+const developer = {
+  name: "Lucas Monroy",
+  role: "Ingeniero de Datos y Software",
+  roleEn: "Data and Software Engineer",
+  traits: ["Analítico", "Proactivo", "Orientado a resultados"],
+  traitsEn: ["Analytical", "Proactive", "Results-oriented"],
+  status: "Disponible para proyectos",
+  statusEn: "Available for projects"
+};
+---
+
+<div class="portfolio-container">
+	<!-- Navegación -->
+	<nav class="nav">
+		<div class="nav-container">
+			<div class="nav-brand">
+				<a href="#top" class="brand-link" aria-label="Ir al inicio">
+					<span class="brand-text">DEV</span>
+				</a>
+			</div>
+			
+			<div class="nav-menu">
+				<a href="#about-detail" class="nav-link" data-lang-es="Sobre mí" data-lang-en="About me">Sobre mí</a>
+				<a href="#projects" class="nav-link" data-lang-es="Proyectos" data-lang-en="Projects">Proyectos</a>
+				<a href="#skills" class="nav-link" data-lang-es="Habilidades" data-lang-en="Skills">Habilidades</a>
+				<a href="#contact" class="nav-link" data-lang-es="Contacto" data-lang-en="Contact">Contacto</a>
+			</div>
+
+			<div class="nav-controls">
+				<button id="lang-toggle" class="control-btn">ES</button>
+				<button id="theme-toggle" class="control-btn">
+					<svg class="icon icon-sm" viewBox="0 0 24 24">
+						<path d="M12 3V4M12 20V21M4 12H3M6.31412 6.31412L5.5 5.5M17.6859 6.31412L18.5 5.5M6.31412 17.69L5.5 18.5M17.6859 17.69L18.5 18.5M21 12H20M16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z"></path>
+					</svg>
+				</button>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Contenido principal -->
+	<main class="main-content">
+		<div class="hero-section" id="home">
+			<div class="hero-container">
+				<div class="hero-text">
+					<p class="greeting" data-lang-es="Hola, soy" data-lang-en="Hello, I'm">Hola, soy</p>
+					<h1 class="name">Lucas Monroy</h1>
+					<h2 class="title" data-lang-es="Ingeniero de Datos de Software" data-lang-en="Software Data Engineer">Ingeniero de Datos de Software</h2>
+					<p class="description" data-lang-es="Construyendo experiencias digitales minimalistas y funcionales." data-lang-en="Building minimalist and functional digital experiences.">
+						Construyendo experiencias digitales minimalistas y funcionales.
+					</p>
+
+					<div class="hero-actions">
+						<a href="#about-detail" class="btn btn-primary" data-lang-es="Conoce más sobre mí" data-lang-en="Learn more about me">
+							Conoce más sobre mí
+							<svg class="icon icon-sm" viewBox="0 0 24 24">
+								<path d="M5 12H19M19 12L12 5M19 12L12 19"></path>
+							</svg>
+						</a>
+
+						<!-- Contenedor para social links y CV -->
+						<div class="social-cv-container">
+							<div class="social-links">
+								<a href="https://github.com/YhatoLG" class="social-link" target="_blank" aria-label="GitHub">
+									<svg class="icon" viewBox="0 0 24 24">
+										<path d="M12 2C6.475 2 2 6.475 2 12C2 16.425 4.8625 20.1625 8.8375 21.4875C9.3375 21.575 9.525 21.275 9.525 21.0125C9.525 20.775 9.5125 19.9875 9.5125 19.15C7 19.6125 6.35 18.5375 6.15 17.975C6.0375 17.6875 5.55 16.8 5.125 16.5625C4.775 16.375 4.275 15.9125 5.1125 15.9C5.9 15.8875 6.4625 16.625 6.65 16.925C7.55 18.4375 8.9875 18.0125 9.5625 17.75C9.65 17.1 9.9125 16.6625 10.2 16.4125C7.975 16.1625 5.65 15.3 5.65 11.475C5.65 10.3875 6.0375 9.4875 6.675 8.7875C6.575 8.5375 6.225 7.5125 6.775 6.1375C6.775 6.1375 7.6125 5.875 9.525 7.1625C10.325 6.9375 11.175 6.825 12.025 6.825C12.875 6.825 13.725 6.9375 14.525 7.1625C16.4375 5.8625 17.275 6.1375 17.275 6.1375C17.825 7.5125 17.475 8.5375 17.375 8.7875C18.0125 9.4875 18.4 10.375 18.4 11.475C18.4 15.3125 16.0625 16.1625 13.8375 16.4125C14.2 16.725 14.5125 17.325 14.5125 18.2625C14.5125 19.6 14.5 20.675 14.5 21.0125C14.5 21.275 14.6875 21.5875 15.1875 21.4875C19.1375 20.1625 22 16.4125 22 12C22 6.475 17.525 2 12 2Z"></path>
+									</svg>
+								</a>
+								
+								<a href="https://www.linkedin.com/in/lucasmonroys/" class="social-link" target="_blank" aria-label="LinkedIn">
+									<svg class="icon" viewBox="0 0 24 24">
+										<path d="M20.447 20.452H16.893V14.883C16.893 13.555 16.866 11.846 15.041 11.846C13.188 11.846 12.905 13.291 12.905 14.785V20.452H9.351V9H12.765V10.561H12.811C13.288 9.661 14.448 8.711 16.181 8.711C19.782 8.711 20.448 11.081 20.448 14.166V20.452H20.447ZM5.337 7.433C4.193 7.433 3.274 6.507 3.274 5.368C3.274 4.23 4.194 3.305 5.337 3.305C6.477 3.305 7.401 4.23 7.401 5.368C7.401 6.507 6.476 7.433 5.337 7.433ZM7.119 20.452H3.555V9H7.119V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.222C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.222 0H22.225Z"></path>
+									</svg>
+								</a>
+
+								<a href="mailto:lucasmonroy1243@gmail.com" class="social-link" aria-label="Email">
+									<svg class="icon" viewBox="0 0 24 24">
+										<path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"></path>
+										<polyline points="22,6 12,13 2,6"></polyline>
+									</svg>
+								</a>
+							</div>
+
+							<!-- Botón de descarga CV -->
+							<div class="cv-download">
+								<a href={cv} download="cv-lucas-monroy.pdf" class="btn btn-cv" data-lang-es="Descargar CV" data-lang-en="Download CV">
+									<svg class="icon icon-sm" viewBox="0 0 24 24">
+										<path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15"></path>
+										<polyline points="7,10 12,15 17,10"></polyline>
+										<line x1="12" y1="15" x2="12" y2="3"></line>
+									</svg>
+									Descargar CV
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Sección Sobre mí -->
+		<section class="about-section" id="about-detail">
+			<div class="container">
+				<div class="about-content">
+					<div class="about-layout">
+						<div class="about-text">
+							<h2 class="section-title" data-lang-es="Sobre mí" data-lang-en="About me">Sobre mí</h2>
+							<p data-lang-es="Soy Ingeniero de Datos y de Software, con formación en análisis estadístico, programación y machine learning. Me caracterizo por un enfoque analítico y orientado a resultados, con capacidad para diseñar y optimizar soluciones eficientes a partir de datos." data-lang-en="I am a Data and Software Engineer, with training in statistical analysis, programming and machine learning. I am characterized by an analytical and results-oriented approach, with the ability to design and optimize efficient solutions from data.">
+								Soy Ingeniero de Datos y de Software, con formación en análisis estadístico, programación y machine learning. Me caracterizo por un enfoque analítico y orientado a resultados, con capacidad para diseñar y optimizar soluciones eficientes a partir de datos.
+							</p>
+							<p data-lang-es="Trabajo de manera proactiva, abordando los problemas de forma estructurada y transformando desafíos técnicos en soluciones prácticas y escalables." data-lang-en="I work proactively, approaching problems in a structured way and transforming technical challenges into practical and scalable solutions.">
+								Trabajo de manera proactiva, abordando los problemas de forma estructurada y transformando desafíos técnicos en soluciones prácticas y escalables.
+							</p>
+							
+							<!-- Estadísticas movidas aquí -->
+							<div class="stats-grid">
+								<div class="stat-item">
+									<div class="stat-number">4+</div>
+									<div class="stat-label" data-lang-es="Años" data-lang-en="Years">Años</div>
+								</div>
+								<div class="stat-item">
+									<div class="stat-number">20+</div>
+									<div class="stat-label" data-lang-es="Proyectos" data-lang-en="Projects">Proyectos</div>
+								</div>
+								<div class="stat-item">
+									<div class="stat-number">100%</div>
+									<div class="stat-label" data-lang-es="Dedicación" data-lang-en="Dedication">Dedicación</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Ventana de código flotante -->
+						<div class="code-section floating">
+							<!-- Versión en Español -->
+							<pre class="code-window" data-lang="es">
+<code><span class="keyword">const</span> <span class="variable">developer</span> = &#123;
+  name: <span class="string">"{developer.name}"</span>,
+  role: <span class="string">"{developer.role}"</span>,
+  traits: [
+    {developer.traits.map(trait => `"${trait}"`).join(",\n    ")}
+  ],
+  status: <span class="string">"{developer.status}"</span>
+&#125;;</code>
+							</pre>
+
+							<!-- Versión en Inglés -->
+							<pre class="code-window" data-lang="en" style="display: none;">
+<code><span class="keyword">const</span> <span class="variable">developer</span> = &#123;
+  name: <span class="string">"{developer.name}"</span>,
+  role: <span class="string">"{developer.roleEn}"</span>,
+  traits: [
+    {developer.traitsEn.map(trait => `"${trait}"`).join(",\n    ")}
+  ],
+  status: <span class="string">"{developer.statusEn}"</span>
+&#125;;</code>
+							</pre>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Sección de Proyectos -->
+		<section class="projects-section" id="projects">
+			<div class="container">
+				<h2 class="section-title" data-lang-es="Proyectos Seleccionados" data-lang-en="Selected Projects">Proyectos Seleccionados</h2>
+				
+				<div class="projects-grid">
+					<!-- Proyecto 1: La Colmena Sabaneta -->
+					<div class="project-card">
+						<div class="project-image">
+							<Image src={colmenaImg} alt="La Colmena Sabaneta" />
+						</div>
+						<div class="project-content">
+							<h3 class="project-title">La Colmena Sabaneta</h3>
+							<p class="project-description" data-lang-es="Sitio web moderno de servicios de cerrajería desarrollado con React y TypeScript. Diseño totalmente responsivo con componentes UI accesibles y alto rendimiento." data-lang-en="Modern locksmith services website developed with React and TypeScript. Fully responsive design with accessible UI components and high performance.">
+								Sitio web moderno de servicios de cerrajería desarrollado con React y TypeScript. Diseño totalmente responsivo con componentes UI accesibles y alto rendimiento.
+							</p>
+							<div class="project-tags">
+								<span class="tag">REACT</span>
+								<span class="tag">TYPESCRIPT</span>
+								<span class="tag">VITE</span>
+								<span class="tag">TAILWIND</span>
+								<span class="tag">RADIX UI</span>
+							</div>
+							<a href="https://www.lacolmenasabaneta.com" target="_blank" rel="noopener noreferrer" class="project-link project-link--website" data-lang-es="Ver sitio web" data-lang-en="View website">
+								<svg class="icon" viewBox="0 0 24 24">
+									<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+								</svg>
+								<span data-lang-es="Ver sitio web" data-lang-en="View website">Ver sitio web</span>
+							</a>
+						</div>
+					</div>
+
+					<!-- Proyecto 2: Neural Network Keras -->
+					<div class="project-card">
+						<div class="project-image">
+							<Image src={neuralImg} alt="Neural Network Keras" />
+						</div>
+						<div class="project-content">
+							<h3 class="project-title">Neural Network Keras</h3>
+							<p class="project-description" data-lang-es="Modelo de red neuronal supervisada para clasificación binaria, entrenado con datos sintéticos y validado con métricas detalladas." data-lang-en="Supervised neural network model for binary classification, trained with synthetic data and validated with detailed metrics.">
+								Modelo de red neuronal supervisada para clasificación binaria, entrenado con datos sintéticos y validado con métricas detalladas.
+							</p>
+							<div class="project-tags">
+								<span class="tag">PYTHON</span>
+								<span class="tag">KERAS</span>
+								<span class="tag">TENSORFLOW</span>
+								<span class="tag">DEEP LEARNING</span>
+							</div>
+							<a href="https://github.com/YhatoLG/NeuralNetwork-Keras-Python.git" target="_blank" rel="noopener noreferrer" class="project-link project-link--github" data-lang-es="Ver en GitHub" data-lang-en="View on GitHub">
+								<svg class="icon" viewBox="0 0 24 24">
+									<path d="M12 2C6.475 2 2 6.475 2 12C2 16.425 4.8625 20.1625 8.8375 21.4875C9.3375 21.575 9.525 21.275 9.525 21.0125C9.525 20.775 9.5125 19.9875 9.5125 19.15C7 19.6125 6.35 18.5375 6.15 17.975C6.0375 17.6875 5.55 16.8 5.125 16.5625C4.775 16.375 4.275 15.9125 5.1125 15.9C5.9 15.8875 6.4625 16.625 6.65 16.925C7.55 18.4375 8.9875 18.0125 9.5625 17.75C9.65 17.1 9.9125 16.6625 10.2 16.4125C7.975 16.1625 5.65 15.3 5.65 11.475C5.65 10.3875 6.0375 9.4875 6.675 8.7875C6.575 8.5375 6.225 7.5125 6.775 6.1375C6.775 6.1375 7.6125 5.875 9.525 7.1625C10.325 6.9375 11.175 6.825 12.025 6.825C12.875 6.825 13.725 6.9375 14.525 7.1625C16.4375 5.8625 17.275 6.1375 17.275 6.1375C17.825 7.5125 17.475 8.5375 17.375 8.7875C18.0125 9.4875 18.4 10.375 18.4 11.475C18.4 15.3125 16.0625 16.1625 13.8375 16.4125C14.2 16.725 14.5125 17.325 14.5125 18.2625C14.5125 19.6 14.5 20.675 14.5 21.0125C14.5 21.275 14.6875 21.5875 15.1875 21.4875C19.1375 20.1625 22 16.4125 22 12C22 6.475 17.525 2 12 2Z"/>
+								</svg>
+								<span data-lang-es="Ver en GitHub" data-lang-en="View on GitHub">Ver en GitHub</span>
+							</a>
+						</div>
+					</div>
+
+					<!-- Proyecto 3: SIVIGILA Analysis -->
+					<div class="project-card">
+						<div class="project-image">
+							<Image src={sivigilaImg} alt="SIVIGILA Analysis" />
+						</div>
+						<div class="project-content">
+							<h3 class="project-title">SIVIGILA Analysis (ML & DL)</h3>
+							<p class="project-description" data-lang-es="Aplicación de técnicas de Machine Learning (Regresión, K-Means) para predicción en datos de vigilancia en salud pública." data-lang-en="Application of Machine Learning techniques (Regression, K-Means) for prediction in public health surveillance data.">
+								Aplicación de técnicas de Machine Learning (Regresión, K-Means) para predicción en datos de vigilancia en salud pública.
+							</p>
+							<div class="project-tags">
+								<span class="tag">PYTHON</span>
+								<span class="tag">SCIKIT-LEARN</span>
+								<span class="tag">PANDAS</span>
+								<span class="tag">HEALTH DATA</span>
+							</div>
+							<a href="https://github.com/YhatoLG/IA_ML-AND-DL.git" target="_blank" rel="noopener noreferrer" class="project-link project-link--github" data-lang-es="Ver en GitHub" data-lang-en="View on GitHub">
+								<svg class="icon" viewBox="0 0 24 24">
+									<path d="M12 2C6.475 2 2 6.475 2 12C2 16.425 4.8625 20.1625 8.8375 21.4875C9.3375 21.575 9.525 21.275 9.525 21.0125C9.525 20.775 9.5125 19.9875 9.5125 19.15C7 19.6125 6.35 18.5375 6.15 17.975C6.0375 17.6875 5.55 16.8 5.125 16.5625C4.775 16.375 4.275 15.9125 5.1125 15.9C5.9 15.8875 6.4625 16.625 6.65 16.925C7.55 18.4375 8.9875 18.0125 9.5625 17.75C9.65 17.1 9.9125 16.6625 10.2 16.4125C7.975 16.1625 5.65 15.3 5.65 11.475C5.65 10.3875 6.0375 9.4875 6.675 8.7875C6.575 8.5375 6.225 7.5125 6.775 6.1375C6.775 6.1375 7.6125 5.875 9.525 7.1625C10.325 6.9375 11.175 6.825 12.025 6.825C12.875 6.825 13.725 6.9375 14.525 7.1625C16.4375 5.8625 17.275 6.1375 17.275 6.1375C17.825 7.5125 17.475 8.5375 17.375 8.7875C18.0125 9.4875 18.4 10.375 18.4 11.475C18.4 15.3125 16.0625 16.1625 13.8375 16.4125C14.2 16.725 14.5125 17.325 14.5125 18.2625C14.5125 19.6 14.5 20.675 14.5 21.0125C14.5 21.275 14.6875 21.5875 15.1875 21.4875C19.1375 20.1625 22 16.4125 22 12C22 6.475 17.525 2 12 2Z"/>
+								</svg>
+								<span data-lang-es="Ver en GitHub" data-lang-en="View on GitHub">Ver en GitHub</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Sección de Habilidades -->
+		<section class="skills-section" id="skills">
+			<div class="container">
+				<h2 class="section-title" data-lang-es="Habilidades" data-lang-en="Skills">Habilidades</h2>
+				
+				<div class="skills-grid">
+					<!-- Columna Izquierda -->
+					<div class="skills-column">
+						<h3 class="skills-subtitle">
+							<span class="subtitle-line"></span>
+							<span data-lang-es="Habilidades Específicas" data-lang-en="Specific Skills">Habilidades Específicas</span>
+						</h3>
+						<div class="skills-list">
+							<div class="skill-item">
+								<span class="skill-name">Python, PANDAS</span>
+								<span class="skill-level" data-lang-es="Avanzado" data-lang-en="Advanced">Avanzado</span>
+							</div>
+							<div class="skill-item">
+								<span class="skill-name">HTML, CSS</span>
+								<span class="skill-level" data-lang-es="Avanzado" data-lang-en="Advanced">Avanzado</span>
+							</div>
+							<div class="skill-item">
+								<span class="skill-name">FastAPI</span>
+								<span class="skill-level" data-lang-es="Intermedio" data-lang-en="Intermediate">Intermedio</span>
+							</div>
+							<div class="skill-item">
+								<span class="skill-name">.NET</span>
+								<span class="skill-level" data-lang-es="Intermedio" data-lang-en="Intermediate">Intermedio</span>
+							</div>
+							<div class="skill-item">
+								<span class="skill-name">GitHub version control</span>
+								<span class="skill-level" data-lang-es="Intermedio" data-lang-en="Intermediate">Intermedio</span>
+							</div>
+							<div class="skill-item">
+								<span class="skill-name">Polars</span>
+								<span class="skill-level skill-level--inter" data-lang-es="Intermedio" data-lang-en="Intermediate">Intermedio</span>
+							</div>
+							<div class="skill-item">
+								<span class="skill-name">PostgreSQL</span>
+								<span class="skill-level skill-level--inter" data-lang-es="Intermedio" data-lang-en="Intermediate">Intermedio</span>
+							</div>
+							<div class="skill-item">
+								<span class="skill-name">React.js</span>
+								<span class="skill-level skill-level--inter" data-lang-es="Intermedio" data-lang-en="Intermediate">Intermedio</span>
+							</div>
+							
+						</div>
+					</div>
+
+					<!-- Columna Derecha -->
+					<div class="skills-column right">
+						<!-- Idiomas -->
+						<div class="skills-group">
+							<h3 class="skills-subtitle">
+								<span class="subtitle-line"></span>
+								<span data-lang-es="Idiomas" data-lang-en="Languages">Idiomas</span>
+							</h3>
+							<div class="languages-grid">
+								<div class="lang-card">
+									<h4 data-lang-es="Español" data-lang-en="Spanish">Español</h4>
+									<p data-lang-es="Nativo" data-lang-en="Native">Nativo</p>
+								</div>
+								<div class="lang-card">
+									<h4 data-lang-es="Inglés" data-lang-en="English">Inglés</h4>
+									<p data-lang-es="Intermedio" data-lang-en="Intermediate">Intermedio</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Habilidades Blandas -->
+						<div class="skills-group">
+							<h3 class="skills-subtitle">
+								<span class="subtitle-line"></span>
+								<span data-lang-es="Habilidades Blandas" data-lang-en="Soft Skills">Habilidades Blandas</span>
+							</h3>
+							<div class="soft-skills-cloud">
+								<span class="soft-tag" data-lang-es="Disciplina" data-lang-en="Discipline">Disciplina</span>
+								<span class="soft-tag" data-lang-es="Responsabilidad" data-lang-en="Responsibility">Responsabilidad</span>
+								<span class="soft-tag" data-lang-es="Motivación" data-lang-en="Motivation">Motivación</span>
+								<span class="soft-tag" data-lang-es="Liderazgo" data-lang-en="Leadership">Liderazgo</span>
+								<span class="soft-tag" data-lang-es="Trabajo en equipo" data-lang-en="Teamwork">Trabajo en equipo</span>
+								<span class="soft-tag" data-lang-es="Persistencia" data-lang-en="Persistence">Persistencia</span>
+								<span class="soft-tag" data-lang-es="Proactividad" data-lang-en="Proactivity">Proactividad</span>
+								<span class="soft-tag" data-lang-es="Mentalidad emprendedora" data-lang-en="Entrepreneurial mindset">Mentalidad emprendedora</span>
+								<span class="soft-tag" data-lang-es="Adaptabilidad" data-lang-en="Adaptability">Adaptabilidad</span>
+							</div>
+						</div>
+
+						<!-- Certificaciones -->
+						<div class="skills-group">
+							<h3 class="skills-subtitle">
+								<span class="subtitle-line"></span>
+								<span data-lang-es="Certificaciones" data-lang-en="Certifications">Certificaciones</span>
+							</h3>
+							<div class="certifications-list">
+								<a href="https://www.credly.com/badges/bde077b0-23b4-4982-8882-e309727bc65f/linked_in_profile" class="cert-card" target="_blank" rel="noopener noreferrer">
+									<div class="cert-icon">
+										<svg viewBox="0 0 24 24" class="icon" fill="none" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+										</svg>
+									</div>
+									<div class="cert-content">
+										<h4 data-lang-es="AWS Academy Graduate - Machine Learning Foundations" data-lang-en="AWS Academy Graduate - Machine Learning Foundations">AWS Academy Graduate - Machine Learning Foundations</h4>
+									</div>
+									<svg viewBox="0 0 24 24" class="icon cert-arrow" fill="none" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+									</svg>
+								</a>
+
+								<a href="https://www.credly.com/badges/a069db95-b980-4d29-8f7e-cb2be56b93d5/linked_in_profile" class="cert-card" target="_blank" rel="noopener noreferrer">
+									<div class="cert-icon">
+										<svg viewBox="0 0 24 24" class="icon" fill="none" stroke="currentColor">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+										</svg>
+									</div>
+									<div class="cert-content">
+										<h4 data-lang-es="AWS Academy Graduate - Cloud Foundations" data-lang-en="AWS Academy Graduate - Cloud Foundations">AWS Academy Graduate - Cloud Foundations</h4>
+									</div>
+									<svg viewBox="0 0 24 24" class="icon cert-arrow" fill="none" stroke="currentColor">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+
+<script src="../scripts/main.js"></script>
+
+
